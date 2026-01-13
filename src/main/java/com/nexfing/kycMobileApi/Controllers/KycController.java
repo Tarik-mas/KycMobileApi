@@ -17,7 +17,7 @@ public class KycController {
     private final KycServiceI kycService;
     private final SubmissionService submissionService;
 
-    @PostMapping("/ocr3")
+    @PostMapping("/ocr4")
     public Mono<IdCardFields> extractFields(@RequestParam("image") MultipartFile file) {
         return kycService.extractFields(file);
     }
