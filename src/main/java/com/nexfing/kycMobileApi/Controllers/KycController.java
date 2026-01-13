@@ -18,8 +18,9 @@ public class KycController {
     private final SubmissionService submissionService;
 
     @PostMapping("/ocr")
-    public void extractFields(@RequestParam("image") MultipartFile file) {
-
+    public Mono<IdCardFields> extractFields(@RequestParam("image") MultipartFile file) {
+        return kycService.extractFields(file);
+        //fff
     }
 
     @PostMapping("/detect-glasses")
